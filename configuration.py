@@ -8,3 +8,7 @@ class Config:
     MOT_root_test = "E:/MOTChallenge/MOT20/test/"
 
     txt_train_data = "train_data.txt"
+
+
+    #Model
+    backbone_name = "D0"
