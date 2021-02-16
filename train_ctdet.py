@@ -6,6 +6,7 @@ import numpy as np
 import cv2
 import tensorflow as tf
 from configuration import Config
+from data.dataloader import DetectionDataset
 
 def gather_sequence_info(sequence_dir, detection_file):
     image_dir = os.path.join(sequence_dir, "img1")
@@ -82,6 +83,9 @@ if __name__ == "__main__":
     if gpus:
         for gpu in gpus:
             tf.config.experimental.set_memory_growth(gpu, True)
+
+    #get MOT dataset
+    train_dataset = DetectionDataset()
 
     args = parse_args()
     run(args.sequence_dir, args.detection_file)
